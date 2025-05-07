@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fdv86u8bg-go-gitops
+  description: This is GitOps manifest for fdv86u8bg-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=fdv86u8bg-go
+    backstage.io/kubernetes-id: fdv86u8bg-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fdv86u8bg-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fdv86u8bg-go
